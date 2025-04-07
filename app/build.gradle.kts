@@ -4,21 +4,24 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.kapt)
     alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "id.andra.jetpackcomposeboilerplate"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "id.andra.jetpackcomposeboilerplate"
         minSdk = 27
         // noinspection OldTargetApi
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_ENDPOINT", "\"http://localhost:8000\"")
     }
 
     buildTypes {
@@ -29,6 +32,12 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            applicationIdSuffix = ".debug"
+            isDebuggable = true
+            isMinifyEnabled = false
+            isShrinkResources = false
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -36,6 +45,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    buildFeatures {
+        compose = true
+        buildConfig = true
     }
 }
 
@@ -52,9 +65,13 @@ dependencies {
 
     implementation(libs.dagger.hilt)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.androidx.espresso.core)
     kapt(libs.dagger.hilt.compiler)
 
     implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+
+    implementation(libs.moshi.kotlin)
 
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp3.okhttp)
@@ -62,6 +79,11 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
+
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore)
+
+    implementation(libs.androidx.security.crypto.ktx)
 
     implementation(libs.timber)
 
