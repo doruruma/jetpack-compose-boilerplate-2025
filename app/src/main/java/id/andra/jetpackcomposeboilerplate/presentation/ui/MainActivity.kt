@@ -4,8 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import id.andra.jetpackcomposeboilerplate.presentation.components.atom.TextBody1
+import id.andra.jetpackcomposeboilerplate.presentation.navigation.Navigation
 import id.andra.jetpackcomposeboilerplate.presentation.theme.AppTheme
 
 @AndroidEntryPoint
@@ -16,7 +19,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                TextBody1(text = "Hello World")
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    Navigation(navController = rememberNavController())
+                }
             }
         }
     }
