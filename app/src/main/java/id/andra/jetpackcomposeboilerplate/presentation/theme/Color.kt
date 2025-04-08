@@ -12,3 +12,5 @@ val Neutral70 = Color(0xFF757575)
 val Neutral80 = Color(0xFF616161)
 val Neutral90 = Color(0xFF404040)
 val Neutral100 = Color(0xFF0A0A0A)
+
+val DangerMain = Color(0xFFCB3A31)
