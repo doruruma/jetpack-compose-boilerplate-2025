@@ -35,7 +35,7 @@ fun Button(
 ) {
     Box(
         modifier = modifier
-            .height(space.x5.plus(space.quarter))
+            .height(space.x5.plus(space.half))
             .clip(RoundedCornerShape(space.x1))
             .clickable {
                 if (!isEnabled) return@clickable
@@ -44,9 +44,7 @@ fun Button(
             .padding(horizontal = space.x1Half),
         contentAlignment = Alignment.Center
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             if (!isLoading && iconResId > 0) {
                 Icon(
                     painter = painterResource(id = iconResId),

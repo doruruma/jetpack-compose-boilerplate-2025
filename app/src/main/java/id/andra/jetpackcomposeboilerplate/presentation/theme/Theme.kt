@@ -10,12 +10,16 @@ import androidx.compose.runtime.CompositionLocalProvider
 private val DarkColorScheme = darkColorScheme(
     primary = Neutral10,
     background = Neutral90,
+    outline = Neutral40,
+    onSurface = Neutral50,
     onBackground = Neutral10,
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Neutral90,
     background = Neutral10,
+    outline = Neutral40,
+    onSurface = Neutral50,
     onBackground = Neutral90,
 )
 

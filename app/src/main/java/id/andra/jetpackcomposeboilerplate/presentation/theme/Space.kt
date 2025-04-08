@@ -27,6 +27,8 @@ data class Space(
     val x12: Dp = 96.dp,
     val x14: Dp = 112.dp,
     val x25: Dp = 200.dp,
+
+    val inputHeight: Dp = 53.dp
 )
 
 val LocalSpace = compositionLocalOf { Space() }

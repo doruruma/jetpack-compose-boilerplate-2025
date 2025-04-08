@@ -6,8 +6,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.sp
 import id.andra.jetpackcomposeboilerplate.presentation.theme.Neutral90
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textBody1
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textBody2
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textButton
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textButtonS
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textCaption
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textCaptionS
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textHeadingS
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textSubtitle1
+import id.andra.jetpackcomposeboilerplate.presentation.theme.textSubtitle2
 
 @Composable
 fun TextBody1(
@@ -20,8 +28,9 @@ fun TextBody1(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 14.sp,
+        style = textBody1.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -40,8 +49,9 @@ fun TextBody2(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 12.sp,
+        style = textBody2.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -60,10 +70,9 @@ fun TextButtonS(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 10.sp,
-        lineHeight = 18.sp,
-        letterSpacing = 1.25.sp,
+        style = textButtonS.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -82,10 +91,9 @@ fun TextButton(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 12.sp,
-        lineHeight = 18.sp,
-        letterSpacing = 1.25.sp,
+        style = textButton.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -104,10 +112,9 @@ fun TextCaption(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 10.sp,
-        lineHeight = 15.sp,
-        letterSpacing = 0.4.sp,
+        style = textCaption.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -126,10 +133,9 @@ fun TextCaptionS(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 8.sp,
-        lineHeight = 15.sp,
-        letterSpacing = 0.4.sp,
+        style = textCaptionS.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -148,10 +154,9 @@ fun TextSubtitle2(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 14.sp,
-        lineHeight = 21.sp,
-        letterSpacing = 0.1.sp,
+        style = textSubtitle2.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -170,8 +175,9 @@ fun TextSubtitle1(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 16.sp,
+        style = textSubtitle1.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
@@ -190,10 +196,9 @@ fun TextHeadingS(
 ) {
     Text(
         text = text,
-        fontWeight = fontWeight,
-        fontSize = 20.sp,
-        lineHeight = 30.sp,
-        letterSpacing = 0.15.sp,
+        style = textHeadingS.copy(
+            fontWeight = fontWeight
+        ),
         modifier = modifier,
         maxLines = maxLines,
         color = color,
