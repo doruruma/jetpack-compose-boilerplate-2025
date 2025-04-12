@@ -41,35 +41,16 @@ fun createHttpRequestInterceptor(authProvider: AuthProvider): HttpRequestInterce
 }
 
 fun createOkHttpClient(
-    token: String,
-    isDev: Boolean = true,
     context: Context,
-    authProvider: AuthProvider
-): OkHttpClient {
-    return OkHttpClient.Builder().apply {
-        addInterceptor(createHttpLoggingInterceptor(isDev))
-        if (isDev)
-            addInterceptor(createHttpRequestInterceptor(authProvider))
-        connectTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)
-        readTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)
-        writeTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)
-        followSslRedirects(true)
-        followRedirects(true)
-        retryOnConnectionFailure(true)
-    }.build()
-}
-
-fun createOkHttpClient(
-    token: String,
     isDev: Boolean = true,
     isCache: Boolean = false,
-    context: Context,
-    authProvider: AuthProvider
+    authProvider: AuthProvider? = null
 ): OkHttpClient {
     return OkHttpClient.Builder().apply {
-        if (isCache) cache(createCache(context))
         addInterceptor(createHttpLoggingInterceptor(isDev))
-        if (isDev)
+        if (isCache)
+            cache(createCache(context))
+        if (authProvider != null)
             addInterceptor(createHttpRequestInterceptor(authProvider))
         connectTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)
         readTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)

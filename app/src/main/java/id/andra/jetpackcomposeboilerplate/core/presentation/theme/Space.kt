@@ -1,4 +1,4 @@
-package id.andra.jetpackcomposeboilerplate.presentation.theme
+package id.andra.jetpackcomposeboilerplate.core.presentation.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
@@ -26,9 +26,7 @@ data class Space(
     val x11: Dp = 88.dp,
     val x12: Dp = 96.dp,
     val x14: Dp = 112.dp,
-    val x25: Dp = 200.dp,
-
-    val inputHeight: Dp = 53.dp
+    val x25: Dp = 200.dp
 )
 
 val LocalSpace = compositionLocalOf { Space() }

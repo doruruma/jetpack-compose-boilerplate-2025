@@ -1,4 +1,4 @@
-package id.andra.jetpackcomposeboilerplate.presentation.navigation
+package id.andra.jetpackcomposeboilerplate.core.presentation.navigation
 
 sealed class Screen(protected val route: String, vararg params: String) {
     val fullRoute: String =
@@ -14,7 +14,7 @@ sealed class Screen(protected val route: String, vararg params: String) {
         operator fun invoke(): String = route
     }
 
-    data object HomeScreen : Screen("home_screen")
+    data object HomeScreen : NoArgumentsScreen("home_screen")
 }
 
 internal fun String.appendParams(vararg params: Pair<String, Any?>): String {

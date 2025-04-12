@@ -1,4 +1,4 @@
-package id.andra.jetpackcomposeboilerplate.presentation.ui
+package id.andra.jetpackcomposeboilerplate.core.presentation.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,8 +8,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import id.andra.jetpackcomposeboilerplate.presentation.navigation.Navigation
-import id.andra.jetpackcomposeboilerplate.presentation.theme.AppTheme
+import id.andra.jetpackcomposeboilerplate.core.presentation.navigation.Navigation
+import id.andra.jetpackcomposeboilerplate.core.presentation.theme.AppTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
