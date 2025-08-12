@@ -19,6 +19,10 @@ object ParamUtil {
         val requestFile = ByteArray(fileBytes.size) { fileBytes[it] }.toRequestBody(
             mediaType.toMediaTypeOrNull()
         )
-        return MultipartBody.Part.createFormData(partName, fileName, requestFile)
+        return MultipartBody.Part.createFormData(
+            name = partName,
+            filename = fileName,
+            body = requestFile
+        )
     }
 }

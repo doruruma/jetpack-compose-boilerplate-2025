@@ -33,7 +33,7 @@ fun AppTheme(
     CompositionLocalProvider(value = LocalSpace provides Space()) {
         MaterialTheme(
             colorScheme = colorScheme,
-            typography = typograhy,
+            typography = typography,
             content = content
         )
     }

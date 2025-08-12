@@ -12,8 +12,8 @@ sealed class Resource<T>(
         data: T? = null,
         code: Int? = null
     ) : Resource<T>(
-        data,
-        error?.handleThrowable(),
-        code
+        data = data,
+        error = error?.handleThrowable(),
+        code = code
     )
 }
