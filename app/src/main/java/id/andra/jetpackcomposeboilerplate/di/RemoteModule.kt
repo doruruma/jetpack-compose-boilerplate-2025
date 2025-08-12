@@ -13,6 +13,7 @@ import id.andra.jetpackcomposeboilerplate.utils.network.createHttpLoggingInterce
 import id.andra.jetpackcomposeboilerplate.utils.network.createHttpRequestInterceptor
 import id.andra.jetpackcomposeboilerplate.utils.network.createMoshi
 import id.andra.jetpackcomposeboilerplate.utils.network.createOkHttpClient
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Singleton
@@ -45,7 +46,7 @@ object RemoteModule {
 
     @Provides
     @Singleton
-    fun provideHttpRequestInterceptor(authProvider: AuthProvider): HttpRequestInterceptor {
+    fun provideHttpRequestInterceptor(authProvider: AuthProvider): Interceptor {
         return createHttpRequestInterceptor(authProvider)
     }
 }
